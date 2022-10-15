@@ -30,24 +30,27 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView">
 
         <RadioButton
+            android:id="@+id/glideButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:text="glide"
+            android:text="@string/glide_project_description"
             android:textSize="16sp" />
 
         <RadioButton
+            android:id="@+id/loadAppButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:text="loadapp"
+            android:text="@string/loadapp_project_description"
             android:textSize="16sp" />
 
         <RadioButton
+            android:id="@+id/retrofitButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:text="retrofit"
+            android:text="@string/retrofit_project_description"
             android:textSize="16sp" />
 
     </RadioGroup>
@@ -57,8 +60,15 @@
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_margin="20dp"
+        app:clickedText="@string/button_name"
+        app:defaultBackgroundColor="@color/colorPrimary"
+        app:defaultText="@string/download"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:loadingBackgroundColor="@color/colorPrimaryDark"
+        app:loadingText="@string/button_loading"
+        app:pacmanColor="@color/colorAccent"
+        app:textColor="@color/white" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
