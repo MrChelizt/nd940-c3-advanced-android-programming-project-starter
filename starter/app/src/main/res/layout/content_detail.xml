@@ -23,6 +23,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:layout_width="0dp"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:padding="8dp"
@@ -30,14 +31,15 @@
             android:textSize="20sp" />
 
         <TextView
+            android:id="@+id/fileNameTextView"
+            android:layout_width="0dp"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:padding="8dp"
-            android:text="glide"
-            android:textColor="@color/colorPrimaryDark"
             android:textSize="20sp" />
 
         <TextView
+            android:layout_width="0dp"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:padding="8dp"
@@ -45,23 +47,25 @@
             android:textSize="20sp" />
 
         <TextView
+            android:id="@+id/statusTextView"
+            android:layout_width="0dp"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:padding="8dp"
-            android:text="success"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="20sp" />
 
     </GridLayout>
 
     <Button
+        android:id="@+id/okButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="32dp"
         android:background="@color/colorAccent"
         android:elevation="2dp"
         android:padding="8dp"
-        android:text="OK"
+        android:text="@string/ok"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
