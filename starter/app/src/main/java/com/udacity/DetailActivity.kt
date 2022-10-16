@@ -2,6 +2,7 @@ package com.udacity
 
 import android.app.NotificationManager
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -28,6 +29,8 @@ class DetailActivity : AppCompatActivity() {
 
         fileNameTextView.text = projectType.fileName
         statusTextView.text = status.desc
+
+        if (status == StatusEnum.FAIL) statusTextView.setTextColor(Color.RED)
 
         okButton.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
