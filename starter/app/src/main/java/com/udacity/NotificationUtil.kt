@@ -23,7 +23,7 @@ fun NotificationManager.sendNotification(
         applicationContext,
         NOTIFICATION_ID,
         contentIntent,
-        PendingIntent.FLAG_IMMUTABLE
+        PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
     )
 
     val checkStatusIntent = Intent(applicationContext, CheckStatusReceiver::class.java)
@@ -35,7 +35,7 @@ fun NotificationManager.sendNotification(
         applicationContext,
         REQUEST_CODE,
         checkStatusIntent,
-        PendingIntent.FLAG_IMMUTABLE
+        PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
     )
 
     val builder = NotificationCompat.Builder(applicationContext, channelId)
@@ -44,9 +44,11 @@ fun NotificationManager.sendNotification(
         .setContentText(applicationContext.getString(R.string.notification_description))
         .setContentIntent(contentPendingIntent)
         .setAutoCancel(true)
-        .addAction(0,
+        .addAction(
+            0,
             applicationContext.getString(R.string.notification_button),
-            checkStatusPendingIntent)
+            checkStatusPendingIntent
+        )
         .setPriority(NotificationCompat.PRIORITY_HIGH)
 
     notify(NOTIFICATION_ID, builder.build())
